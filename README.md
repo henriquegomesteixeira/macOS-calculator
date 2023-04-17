@@ -8,5 +8,4 @@ Você pode usar o teclado para inserir números, ponto decimal, backspace, opera
 Digitar Enter calculará a operação
 C irá limpar a operação
 
-![image](![image](https://user-images.githubusercontent.com/115906489/232383364-c2ce6b23-7660-4ba3-986a-8721d558a7a5.png)
-)
+![image](![image](Captura de tela de 2023-04-17 02-01-38.png))
