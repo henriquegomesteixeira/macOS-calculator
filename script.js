@@ -1,12 +1,8 @@
-const padrao = document.querySelectorAll('.padrão');
-const resultado = document.querySelector('.resultado');
-const sinal = document.querySelectorAll('.sinal');
-const clear = document.querySelector('.clear');
-const executarCalculo = document.querySelector('.igual');
-const trocaSinal = document.querySelector('.trocaSinal');
-const porcentagem = document.querySelector('.porcentagem');
-const multiplicacao = document.querySelector('.multiplicacao');
-const divisao = document.querySelector('.divisao');
+const defaultKey = document.querySelectorAll('.default-key');
+const result = document.querySelector('.result');
+const deleteButton = document.querySelector('.delete-button');
+const performCalculation = document.querySelector('.to-execute');
+const signExchange = document.querySelector('.sign-exchange');
 
 let number1 = 0;
 let number2 = 0;
@@ -14,74 +10,68 @@ let adicaoClicada = false;
 let subtracaoClicada = false;
 let multiplicacaoClicada = false;
 let divisaoClicada = false;
-let porcentagemClicada = false;
 
-padrao.forEach((element) => {
+defaultKey.forEach((element) => {
   element.addEventListener('click', () => {
-    if (element.classList.contains('adicao')) {
+    if (element.classList.contains('addition')) {
       adicaoClicada = true;
-      number1 = `${resultado.value}${'+'}`;
-      number2 = resultado.value;
-      resultado.value = number2;
+      number1 = `${result.value}${'+'}`;
+      number2 = result.value;
+      result.value = number2;
     } else if (adicaoClicada) {
-      resultado.value = '';
+      result.value = '';
       adicaoClicada = false;
     }
-    if (element.classList.contains('subtracao')) {
+    if (element.classList.contains('subtraction')) {
       subtracaoClicada = true;
-      number1 = `${resultado.value}${'-'}`;
-      number2 = resultado.value;
-      resultado.value = number2;
+      number1 = `${result.value}${'-'}`;
+      number2 = result.value;
+      result.value = number2;
     } else if (subtracaoClicada) {
-      resultado.value = '';
+      result.value = '';
       subtracaoClicada = false;
     }
-    if (element.classList.contains('multiplicacao')) {
+    if (element.classList.contains('multiplication')) {
       multiplicacaoClicada = true;
-      number1 = `${resultado.value}${'*'}`;
-      number2 = resultado.value;
-      resultado.value = number2;
+      number1 = `${result.value}${'*'}`;
+      number2 = result.value;
+      result.value = number2;
     } else if (multiplicacaoClicada) {
-      resultado.value = '';
+      result.value = '';
       multiplicacaoClicada = false;
     }
-    if (element.classList.contains('divisao')) {
+    if (element.classList.contains('division')) {
       divisaoClicada = true;
-      number1 = `${resultado.value}${'/'}`;
-      number2 = resultado.value;
-      resultado.value = number2;
+      number1 = `${result.value}${'/'}`;
+      number2 = result.value;
+      result.value = number2;
     } else if (divisaoClicada) {
-      resultado.value = '';
+      result.value = '';
       divisaoClicada = false;
     }
-    if (element.classList.contains('porcentagem')) {
-      porcentagemClicada = true;
+    if (element.classList.contains('percentage')) {
+      result.value = eval(number1 + (result.value / 100 * number2));
     }
     let valorr = element.value;
-    resultado.value += valorr;
+    result.value += valorr;
   })
 })
 
-clear.addEventListener('click', () => {
-  resultado.value = '';
+deleteButton.addEventListener('click', () => {
+  result.value = '';
   number1 = 0;
 })
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Delete' || event.key === 'Backspace') {
-    resultado.value = resultado.value.slice(0, -1);
+    result.value = result.value.slice(0, -1);
   }
 });
 
-trocaSinal.addEventListener('click', () => {
-  resultado.value = resultado.value * -1;
+signExchange.addEventListener('click', () => {
+  result.value = result.value * -1;
 })
 
-executarCalculo.addEventListener('click', () => {
-  if (porcentagemClicada === true) {
-    porcentagemClicada = false;
-    return console.log(resultado.value = eval(number1 + (resultado.value / 100 * number2)));
-  } else {
-    resultado.value = eval(number1 + resultado.value);
-  }
+performCalculation.addEventListener('click', () => {
+  result.value = eval(number1 + result.value);
 })

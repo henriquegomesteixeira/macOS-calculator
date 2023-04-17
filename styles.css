@@ -9,61 +9,78 @@
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   margin: 0;
-  background: #ecf0f3;
   outline: none;
 }
 
-.bloco {
+body {
+  background-image: linear-gradient(to bottom, rgb(1, 75, 100), rgba(0, 46, 61 ,1));
+}
+
+.block {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.calculadora {
+.calculator {
   border: 1px solid var rgba(0, 0, 0, 1);
   position: relative;
   font-size: 0;
+  border: 1.5px solid rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
 }
 
-.resultado {
-  background-color: #504b52;
+.result {
+  background-color: #504b52a1;
   text-align: right;
   padding: 20px;
   border: none;
   color: white;
   outline: none;
-  font-size: 43px;
+  font-size: 50px;
   width: 350px;
   height: 100px;
   padding: 20px;
   font-weight: 200;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   padding-bottom: 0px;
 }
 
-.resultado::placeholder {
+.result::placeholder {
   color: white;
 }
 
-.padrão {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+.default-key {
+  border: 1px solid rgba(0, 0, 0, 0.24);
   outline: none;
   width: 87.7px;
   height: 70px;
-  background-color: #747474;
+  background-color: #747474cb;
   color: white;
   cursor: pointer;
   font-size: 20px;
 }
 
-.inicial {
- background-color: #585858;
+.default-key:active {
+  background-color: #afafaf;
 }
 
-.laranja {
+.top-key {
+ background-color: #585858d7;
+}
+
+.top-key:active {
+  background-color: #7b797a;
+}
+
+.orange-button {
   background-color: #F3A33C;
+}
+
+.orange-button:active {
+  background-color: #c97c02;
 }
 
 .zero {
@@ -71,6 +88,6 @@
   border-bottom-left-radius: 20px;
 }
 
-.igual {
+.to-execute {
   border-bottom-right-radius: 20px;
 }
