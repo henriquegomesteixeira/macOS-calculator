@@ -8,4 +8,4 @@ Você pode usar o teclado para inserir números, ponto decimal, backspace, opera
 Digitar Enter calculará a operação
 C irá limpar a operação
 
-![Resultado esperado](image/apple-calculator.png)
+![imagem Da Calculadora](image/calculadora.png)
