@@ -6,50 +6,50 @@ const signExchange = document.querySelector('.sign-exchange');
 
 let operandPrevious = 0;
 let operandCurrent = 0;
-let adicaoClicada = false;
-let subtracaoClicada = false;
-let multiplicacaoClicada = false;
-let divisaoClicada = false;
-let erroDivisão = false;
+let clickedAddition = false;
+let clickedSubtraction = false;
+let clickedMultiplication = false;
+let clickedDivision = false;
+let divisionError = false;
 
 defaultKey.forEach((element) => {
   element.addEventListener('click', () => {
     if (element.classList.contains('addition')) {
-      adicaoClicada = true;
+      clickedAddition = true;
       operandPrevious = `${result.value}${'+'}`;
       operandCurrent = result.value;
       result.value = operandCurrent;
-    } else if (adicaoClicada) {
+    } else if (clickedAddition) {
       result.value = '';
-      adicaoClicada = false;
+      clickedAddition = false;
     }
     if (element.classList.contains('subtraction')) {
-      subtracaoClicada = true;
+      clickedSubtraction = true;
       operandPrevious = `${result.value}${'-'}`;
       operandCurrent = result.value;
       result.value = operandCurrent;
-    } else if (subtracaoClicada) {
+    } else if (clickedSubtraction) {
       result.value = '';
-      subtracaoClicada = false;
+      clickedSubtraction = false;
     }
     if (element.classList.contains('multiplication')) {
-      multiplicacaoClicada = true;
+      clickedMultiplication = true;
       operandPrevious = `${result.value}${'*'}`;
       operandCurrent = result.value;
       result.value = operandCurrent;
-    } else if (multiplicacaoClicada) {
+    } else if (clickedMultiplication) {
       result.value = '';
-      multiplicacaoClicada = false;
+      clickedMultiplication = false;
     }
     if (element.classList.contains('division')) {
-      divisaoClicada = true;
+      clickedDivision = true;
       operandPrevious = `${result.value}${'/'}`;
       operandCurrent = result.value;
       result.value = operandCurrent;
-      erroDivisão = true;
-    } else if (divisaoClicada) {
+      divisionError = true;
+    } else if (clickedDivision) {
       result.value = '';
-      divisaoClicada = false;
+      clickedDivision = false;
     }
     if (element.classList.contains('percentage')) {
       result.value = eval(operandPrevious + (result.value / 100 * operandCurrent));
@@ -68,12 +68,12 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Delete' || event.key === 'Backspace') {
     result.value = result.value.slice(0, -1);
   } else if ((event.key >= '0' && event.key <= '9') || event.key === '.') {
-    if (adicaoClicada || subtracaoClicada || multiplicacaoClicada || divisaoClicada) {
+    if (clickedAddition || clickedSubtraction || clickedMultiplication || clickedDivision) {
       result.value = '';
-      adicaoClicada = false;
-      subtracaoClicada = false;
-      multiplicacaoClicada = false;
-      divisaoClicada = false;
+      clickedAddition = false;
+      clickedSubtraction = false;
+      clickedMultiplication = false;
+      clickedDivision = false;
     }
     result.value += event.key;
   } else if (event.key === 'Escape') {
@@ -95,8 +95,8 @@ signExchange.addEventListener('click', () => {
 });
 
 performCalculation.addEventListener('click', () => {
-  if (erroDivisão === true && result.value === '0') {
-    erroDivisão = false;
+  if (divisionError === true && result.value === '0') {
+    divisionError = false;
     result.value = "Erro";
     return;
   }
