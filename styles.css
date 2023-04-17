@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;500&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  letter-spacing: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  margin: 0;
+  background: #ecf0f3;
+  outline: none;
+}
+
+.bloco {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculadora {
+  border: 1px solid var rgba(0, 0, 0, 1);
+  position: relative;
+  font-size: 0;
+}
+
+.resultado {
+  background-color: #504b52;
+  text-align: right;
+  padding: 20px;
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 43px;
+  width: 350px;
+  height: 100px;
+  padding: 20px;
+  font-weight: 200;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-bottom: 0px;
+}
+
+.resultado::placeholder {
+  color: white;
+}
+
+.padrão {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  outline: none;
+  width: 87.7px;
+  height: 70px;
+  background-color: #747474;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.inicial {
+ background-color: #585858;
+}
+
+.laranja {
+  background-color: #F3A33C;
+}
+
+.zero {
+  width: 175.2px;
+  border-bottom-left-radius: 20px;
+}
+
+.igual {
+  border-bottom-right-radius: 20px;
+}
