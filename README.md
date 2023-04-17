@@ -8,4 +8,4 @@ Você pode usar o teclado para inserir números, ponto decimal, backspace, opera
 Digitar Enter calculará a operação
 C irá limpar a operação
 
-![image](![image](image/Captura de tela de 2023-04-17 02-01-38.png))
+![image](image/Captura de tela de 2023-04-17 02-01-38.png)
